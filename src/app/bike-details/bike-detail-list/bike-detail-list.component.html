@@ -2,17 +2,17 @@
 <ul class="list-group  mb-5">  
       <li *ngFor="let bike of getRentedBikes()" class="list-group-item">      
             <div class="raw">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}     
-                  <button type="button" class="btn btn-danger mx-3">Cancel rent</button>  
+                  <button type="button" class="btn btn-danger mx-3" (click)="CancelRent(bike.bikeID,bike)">Cancel rent</button>  
             </div>                   
       </li>   
 </ul>
 
-<h3>Awailable bicycles</h3>
+<h3>Available bicycles</h3>
 <ul class="list-group mb-5">            
       <li *ngFor="let bike of getNoRentedBikes()" class="list-group-item">      
             <div class="raw">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}     
-                  <button type="button" class="btn btn-primary mx-3">Rent</button>  
-                  <button type="button" class="btn btn-danger">Delete</button>  
+                  <button type="button" class="btn btn-primary mx-3" (click)="Rent(bike.bikeID,bike)">Rent</button>  
+                  <button type="button" class="btn btn-danger" (click)="Delete(bike.bikeID)">Delete</button>  
             </div>                   
       </li>              
 </ul>

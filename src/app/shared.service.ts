@@ -16,6 +16,14 @@ export class SharedService {
     return this.http.post(this.baseUrl,this.formData);
   }
 
+  updateBikeDetail(bikeID:number,bike:Shared){
+    return this.http.put(`${this.baseUrl}/${bikeID}`,bike);
+  }
+  
+  deleteBikeDetail(bikeID:number){
+    return this.http.delete(`${this.baseUrl}/${bikeID}`);
+  }
+
   refreshList(){
     this.http.get(this.baseUrl)
     .toPromise()
