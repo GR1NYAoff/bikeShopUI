@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 import { NgForm } from '@angular/forms';
+import { Shared } from 'src/app/shared.model';
 @Component({
   selector: 'app-bike-detail',
   templateUrl: './bike-detail.component.html',
@@ -17,11 +18,16 @@ export class BikeDetailComponent implements OnInit {
   onSubmit(form:NgForm){
     this.service.postBikeDetail().subscribe(
       res=>{
-        
+        this.resetForm(form);
+        this.service.refreshList();
       },
-      err=>{console.log(err); }
-      
+      err=>{console.log(err); }      
     );
+  }
+
+  resetForm(form:NgForm){
+    form.form.reset();
+    this.service.formData = new Shared(); 
   }
 
 }
