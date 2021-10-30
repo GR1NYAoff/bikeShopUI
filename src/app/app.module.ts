@@ -3,16 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BikeDetailsComponent } from './bike-details/bike-details.component';
+import { BikeDetailComponent } from './bike-details/bike-detail/bike-detail.component';
+import { BikeDetailListComponent } from './bike-details/bike-detail-list/bike-detail-list.component';
+import { SharedService } from './shared.service';
+
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BikeDetailsComponent,
+    BikeDetailComponent,
+    BikeDetailListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

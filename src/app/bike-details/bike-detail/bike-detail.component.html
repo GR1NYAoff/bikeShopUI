@@ -1,0 +1,47 @@
+<h3>Create new rent</h3>
+<form #form="ngForm" autocomplete="off" class="p-3 rounded"
+ (submit)="onSubmit(form)" style="background-color:rgb(224, 224, 224)">
+      
+            <input type="hidden" name="bikeID"
+            [value]="service.formData.bikeID"/>
+           
+      <div class="row">
+            <div class="form-group col-md-3 col-form-label-sm">
+                  <label>Bike name</label>
+                  <input name="bikeName" #bikeName="ngModel" 
+                  [(ngModel)]="service.formData.bikeName"
+                  class="form-control mt-1" placeholder="Bike name">   
+            </div>
+
+            
+            <div class="form-group col-md-3 col-form-label-sm">
+                  <label>Bike type</label>
+                  <select class="form-control mt-1" name="bikeType" #bikeType="ngModel" 
+                        [(ngModel)]="service.formData.bikeType"
+                        placeholder="Bike type">
+                        <option>Custom</option>
+                        <option>Mountain</option>
+                        <option>Road</option>                  
+                  </select>                       
+            </div>
+
+            
+            <div class="form-group col-md-3 col-form-label-sm">
+                  <label>Bike price</label>
+                  <input name="bikePrice" #bikeID="ngModel" 
+                  [(ngModel)]="service.formData.bikePrice"
+                  class="form-control mt-1" placeholder="Bike price">   
+            </div>
+            
+      
+            <div class="col-md-3 text-center mt-4">                      
+                  <button type="submit" class="btn btn-success px-5 py-2">Submit rent</button>        
+            </div>           
+            
+      </div>
+      <input type="hidden" name="bikeRented"
+            [value]="service.formData.bikeRented"/>
+
+</form>
+
+
