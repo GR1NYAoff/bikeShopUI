@@ -1,21 +1,27 @@
 <h3>Your rent ({{rentedBicycles}})</h3>
 <ul class="list-group  mb-5">  
-      <li *ngFor="let bike of getRentedBikes()" class="list-group-item">      
-            <div class="raw">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}     
-                  <button type="button" class="btn btn-danger mx-5 px-5" style="float: right" (click)="CancelRent(bike.bikeID,bike)">Cancel rent</button>  
+      <li *ngFor="let bike of getRentedBikes()" class="list-group-item my-2">      
+            <div class="raw mt-3">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}     
+                  <button type="button" class="btn btn-danger mx-5 px-5 mb-2" style="float: right" 
+                  (click)="CancelRent(bike.bikeID,bike)">Cancel rent</button>  
             </div>                   
       </li>   
 </ul>
 
 <h3>Available bicycles ({{availableBicycles}})</h3>
 <ul class="list-group mb-5">            
-      <li *ngFor="let bike of getNoRentedBikes()" class="list-group-item">      
-            <div class="raw">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}
-                  <div class="buttons" style="float: right">
-                        <button type="button" class="btn btn-primary mx-3 px-5" (click)="Rent(bike.bikeID,bike)">Rent</button>  
-                        <button type="button" class="btn btn-danger px-5" (click)="Delete(bike.bikeID)">Delete</button>
+      <li *ngFor="let bike of getNoRentedBikes()" class="list-group-item my-2">      
+            <div class="raw mt-3">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}
+                  <div class="buttons mb-2" style="float: right;">
+                        <button type="button" class="btn btn-primary mx-3 px-5" 
+                        (click)="Rent(bike.bikeID,bike)">Rent</button>  
+                        <button type="button" class="btn btn-danger px-5" 
+                        (click)="Delete(bike.bikeID)">Delete</button>
                   </div>     
                     
             </div>                   
       </li>              
 </ul>
+
+
+
