@@ -1,6 +1,6 @@
 <h3>Create new rent</h3>
-<form #form="ngForm" autocomplete="off" class="p-3 rounded"
- (submit)="onSubmit(form)" style="background-color:rgb(224, 224, 224)">
+<form #form="ngForm" autocomplete="off" class="pb-4 pt-2 px-3 rounded"
+ (submit)="onSubmit(form)" style="background-color:#eaebef">
       
             <input type="hidden" name="bikeID"
             [value]="service.formData.bikeID"/>
@@ -34,8 +34,8 @@
             </div>
             
       
-            <div class="col-md-3 text-center mt-4">                      
-                  <button type="submit" class="btn btn-success px-5 py-2">Submit rent</button>        
+            <div class="form-group col-md-3 text-center col-form-label-sm">                      
+                  <button type="submit" class="btn btn-success px-5 mt-4">Submit rent</button>        
             </div>           
             
       </div>

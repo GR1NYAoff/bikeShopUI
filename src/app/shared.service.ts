@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class SharedService {
   formData:Shared = new Shared();
   list:Shared[];
+
   readonly baseUrl="http://localhost:19551/api/BikeDetail";
   
   constructor(private http:HttpClient) { }

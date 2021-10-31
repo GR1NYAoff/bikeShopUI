@@ -12,15 +12,26 @@ export class BikeDetailListComponent implements OnInit {
 
   constructor(public service:SharedService) { }
 
+  availableBicycles:number;
+  availableBicyclesList:any=[];
+  rentedBicycles:number;
+  rentedBicyclesList:any=[];
+  
+  
   ngOnInit(): void {
     this.service.refreshList();
   }
 
-  getRentedBikes() {
-    return this.service.list.filter((item) => item.bikeRented === true);
+  getRentedBikes() { 
+    this.rentedBicyclesList = this.service.list.filter((item) => item.bikeRented === true);
+    this.rentedBicycles = this.rentedBicyclesList.length;
+    return  this.rentedBicyclesList;
   }
+
   getNoRentedBikes() {
-    return this.service.list.filter((item) => item.bikeRented === false);
+    this.availableBicyclesList = this.service.list.filter((item) => item.bikeRented === false);
+    this.availableBicycles = this.availableBicyclesList.length;
+    return this.availableBicyclesList;
   }
 
   Rent(bikeID:number,bike:Shared){
