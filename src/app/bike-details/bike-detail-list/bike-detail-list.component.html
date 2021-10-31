@@ -1,4 +1,4 @@
-<h3>Your rent ({{rentedBicycles}})</h3>
+<h3><mat-icon>access_time</mat-icon> Your rent ({{rentedBicycles}})</h3>
 <ul class="list-group  mb-5">  
       <li *ngFor="let bike of getRentedBikes()" class="list-group-item my-2">      
             <div class="raw mt-3">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}     
@@ -8,7 +8,7 @@
       </li>   
 </ul>
 
-<h3>Available bicycles ({{availableBicycles}})</h3>
+<h3><mat-icon> directions_bike</mat-icon> Available bicycles ({{availableBicycles}})</h3>
 <ul class="list-group mb-5">            
       <li *ngFor="let bike of getNoRentedBikes()" class="list-group-item my-2">      
             <div class="raw mt-3">{{bike.bikeName}} / {{bike.bikeType}} / ${{bike.bikePrice}}
